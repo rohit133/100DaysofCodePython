@@ -40,16 +40,16 @@ def play_game():
 
         # Detecting collision with the Wall
         if jim.head.xcor() > 290 or jim.head.xcor() < -290 or jim.head.ycor() > 290 or jim.head.ycor() < -290:
-            game_is_on = False 
-            score.game_over() 
+            score.reset_game()
+            jim.reset()
         
-        # Detecting Collision with Tail      
+        # Detecting Collision with Tail       
         # if head of the sanke collied with any segment of the snake body then 
         # trigger the game over sequence
         for seg in jim.segment[1:]:
             if jim.head.distance(seg) < 10:
-                game_is_on = False
-                score.game_over()
+                score.reset_game()
+                jim.reset()
 
 
 play_game()
