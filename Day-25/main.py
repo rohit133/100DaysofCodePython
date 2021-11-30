@@ -12,14 +12,11 @@ guess_state =[]
 while len(guess_state) < 50:
     answer_state = screen.textinput(title=f"{len(guess_state)}/50 State Correct", prompt="What's the name of the State?").title()
     if answer_state == "Exit":
-        missing_states = []
-        for state in all_state:
-            if state not in guess_state:
-                missing_states.append(state)
+        missing_states = [state for state in all_state if state not in guess_state]
         new_data = pd.DataFrame(missing_states)
         new_data.to_csv("Day-25\\States_to_learn.csv")
-
         break
+    
     if answer_state in all_state:
         guess_state.append(answer_state)
         t = turtle.Turtle()
