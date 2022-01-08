@@ -28,6 +28,7 @@ def is_iss_overhead():
     iss_longitude = float(data["iss_position"]["longitude"])
 
     #Your position is within +5 or -5 degrees of the ISS position.
+    #If the ISS is close to my current position
     if MY_LAT -5 >= iss_latitude <= MY_LAT+5 and MY_LONG -5 >= iss_longitude <=MY_LONG + 5:
         return True
 
@@ -48,17 +49,12 @@ def is_night():
 
     if time_now >=sunset or time_now <= sunrise:
         return True
-    #If the ISS is close to my current position
     
 if is_iss_overhead() and is_night():
     while True:
         time.sleep(60)
         send_email()
 
-
-# and it is currently dark
-# Then send me an email to tell me to look up.
-# BONUS: run the code every 60 seconds.
 
 
 
