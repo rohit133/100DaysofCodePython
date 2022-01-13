@@ -1,7 +1,7 @@
 import requests
 from datetime import datetime
 
-
+USER_LOG = "https://pixe.la/v1/users/rohit0day/graphs/graph1.html"
 
 USERNAME= "rohit0day"
 TOKEN = "drit42uthu8934tu"
