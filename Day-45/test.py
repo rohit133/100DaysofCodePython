@@ -1,5 +1,3 @@
-from heapq import heapify
-from traceback import print_tb
 import lxml
 from bs4 import BeautifulSoup
 with open("Day-45\website.html",encoding="utf8") as file:
